@@ -1,0 +1,13 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:item": {
+		"description": {
+			"identifier": "raft:throwable_anchor",
+			"menu_category": { "category": "equipment" }
+		},
+		"components": {
+			"minecraft:icon": { "textures": { "default": "raft_throwable_anchor" } },
+			"minecraft:max_stack_size": 5
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": { "identifier": "raft:throwable_anchor" },
+		"tags": ["crafting_table"],
+		"pattern": ["SPS", "RRR", "SPS"],
+		"key": {
+			"P": { "item": "minecraft:jungle_planks" },
+			"R": { "item": "minecraft:string" },
+			"S": { "item": "minecraft:cobblestone" }
+		},
+		"unlock": [{ "item": "minecraft:string" }],
+		"result": { "item": "raft:throwable_anchor" }
+	}
+}

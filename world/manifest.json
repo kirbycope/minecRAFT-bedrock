@@ -1,0 +1,18 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "minecRAFT",
+		"description": "Raft but in Minecraft",
+		"base_game_version": [1, 26, 0],
+		"lock_template_options": true,
+		"version": [0, 1, 0],
+		"uuid": "090f828e-4f80-4bbf-aa55-592cfa9eab4d"
+	},
+	"modules": [
+		{
+			"type": "world_template",
+			"version": [0, 1, 0],
+			"uuid": "eeb682cd-f3dc-404a-9b89-29c670d3d0a5"
+		}
+	]
+}

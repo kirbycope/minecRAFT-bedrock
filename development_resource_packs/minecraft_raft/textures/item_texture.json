@@ -1,0 +1,7 @@
+{
+	"resource_pack_name": "minecraft_raft",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"raft_throwable_anchor": { "textures": "textures/items/throwable_anchor" }
+	}
+}

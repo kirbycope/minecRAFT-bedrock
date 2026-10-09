@@ -1,0 +1,57 @@
+name: Release
+
+# Publishes minecRAFT-bedrock.mctemplate as a GitHub Release asset.
+# Trigger it by pushing a version tag, or manually from the Actions tab:
+#   git tag v0.1.0 && git push origin v0.1.0
+# The archive is built by tools/build_addon.py into build/, with the Display add-on's packs taken from
+# kirbycope/display-bedrock's default branch.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag for the release (e.g. v0.1.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Check out the Display add-on
+        uses: actions/checkout@v4
+        with:
+          repository: kirbycope/display-bedrock
+          path: display-bedrock
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build minecRAFT-bedrock.mctemplate
+        run: python3 tools/build_addon.py --display display-bedrock
+
+      - name: Resolve tag
+        id: tag
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "value=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.value }}
+          files: build/minecRAFT-bedrock.mctemplate
+          generate_release_notes: true

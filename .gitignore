@@ -1,0 +1,8 @@
+# the release build, written by tools/build_addon.py
+/build/
+
+# the watchdog skill's run logs
+/watchdog/
+
+# Python bytecode
+__pycache__/
