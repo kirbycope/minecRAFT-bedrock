@@ -4,7 +4,7 @@
 		"name": "minecRAFT",
 		"description": "Raft but in Minecraft: the throwable anchor",
 		"uuid": "fa727eb2-6418-49b7-aef3-ba7ce6c7db28",
-		"version": [0, 1, 2],
+		"version": [0, 1, 3],
 		"min_engine_version": [1, 26, 0]
 	},
 	"modules": [
@@ -14,6 +14,7 @@
 			"version": [0, 1, 0]
 		}
 	],
+	"capabilities": ["pbr"],
 	"metadata": {
 		"authors": ["Kirbycope"]
 	}

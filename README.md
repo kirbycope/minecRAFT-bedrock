@@ -105,6 +105,23 @@ A resource pack change needs its manifest version bumped (and the world's `world
 the client keeps its cached copy. On the first join after a bump the client asks whether to download the server's
 resource packs; take the download, or the anchor shows as an invisible item with a raw name.
 
+## Trailer and screenshots
+`tools/trailer.py` films the trailer on the local server with the client on the PC: it drives the game through
+cobblemon-bedrock's `tools/bridge.py` and `tools/client_drive.py`, moves Bedrock's `/camera` free camera with
+eased moves, hides the HUD with `/hud`, and records the game's 16:9 middle with ffmpeg's gdigrab.
+
+```bash
+python tools/trailer.py prep            # noon, clear weather, no island, the anchor set down on the raft
+python tools/trailer.py shot open       # one shot into trailer/takes/open.mp4 (the shots are listed in the script)
+python tools/trailer.py still raft      # a 1920x1080 still into trailer/screenshots/raft.png
+python tools/trailer_cut.py             # cuts the takes into trailer/minecRAFT-trailer.mp4
+python tools/trailer_cut.py --music track.ogg
+```
+
+The takes and the copies of the game's fonts the titles use live in the git-ignored `trailer/takes/`. Vibrant
+Visuals only stays on when every resource pack in the world declares `"capabilities": ["pbr"]`, which is why this
+pack does.
+
 ## Releasing
 Pushing a tag that starts with `v` (for example `git tag v0.1.0 && git push origin v0.1.0`) runs the Release
 workflow in `.github/workflows/release.yml`, which checks out display-bedrock beside this repository, builds the

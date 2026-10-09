@@ -6,3 +6,9 @@
 
 # Python bytecode
 __pycache__/
+
+# trailer takes and work files
+/trailer/takes/
+/trailer/*.mp4
+/trailer/*sheet*.png
+/trailer/f_*.png
