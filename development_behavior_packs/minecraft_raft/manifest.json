@@ -2,9 +2,9 @@
 	"format_version": 2,
 	"header": {
 		"name": "minecRAFT",
-		"description": "Raft but in Minecraft",
+		"description": "Raft but in Minecraft (v0.1.4)",
 		"uuid": "9b430833-a9bb-4bcc-b159-5e441ca78dea",
-		"version": [0, 1, 0],
+		"version": [0, 1, 4],
 		"min_engine_version": [1, 26, 0]
 	},
 	"modules": [
@@ -13,7 +13,7 @@
 			"type": "script",
 			"language": "javascript",
 			"uuid": "911f3a11-6012-4ae0-b124-9c9544829135",
-			"version": [0, 1, 0],
+			"version": [0, 1, 4],
 			"entry": "scripts/main.js"
 		}
 	],
