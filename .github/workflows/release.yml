@@ -37,6 +37,9 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Check pack versions
+        run: python3 tools/check_pack_versions.py
+
       - name: Build minecRAFT-bedrock.mctemplate
         run: python3 tools/build_addon.py --display display-bedrock
 
